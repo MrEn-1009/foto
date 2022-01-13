@@ -1,0 +1,26 @@
+from tkinter import *
+def rotik():
+    c.create_arc((105, 5, 150, 50), style=CHORD, start=195, extent=150, fill="black") # от 0 до 150 градусов # Ломаная со стрелкой на конце
+def ovalik():
+    c.create_oval((5, 105, 50, 120), ) 
+aken=Tk()
+aken.geometry('500x500')
+aken.title('Фоторобот')
+aken.resizable(width=False, height=False) 
+f1=Frame(aken,width=500,height=250)
+f1.pack(side=TOP)
+f2=Frame(aken,width=500,height=250)
+f2.pack(side=BOTTOM)
+c = Canvas(f2, width=300, height=300, bg="white") 
+glaz=Checkbutton(f1,text='Глаза')
+glaz.pack(side=TOP)
+oval=Checkbutton(f1,text='Овал лица',command=ovalik)
+oval.pack(side=TOP)
+nos=Checkbutton(f1,text='Нос')
+nos.pack(side=TOP)
+rot=Checkbutton(f1,text='Рот',command=rotik)
+rot.pack(side=TOP)
+brovi=Checkbutton(f1,text='Брови')
+brovi.pack(side=TOP)
+c.pack()
+aken.mainloop() 
