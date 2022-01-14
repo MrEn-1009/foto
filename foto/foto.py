@@ -5,26 +5,123 @@ def rotik():
     elif var_rot.get()=='tühi':
         c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="#ccb35a", outline='#ccb35a')
 def ovalik():
-    if var_oval.get()=='oval':
-        c.create_oval((10, 10, 290, 290),fill='#ccb35a') 
-    elif var_oval.get()=='tühi':
-        c.create_oval((10, 10, 290, 290),outline='white') 
+    oval=var_oval.get()
+    nos=var_nos.get()
+    brov=var_brov.get()
+    rot=var_rot.get()
+    glaz=var_glaz.get()
+    if oval=='oval' :
+        c.create_oval((10, 10, 290, 290),fill='#ccb35a')
+        if glaz=='glaz' and nos=='nos' and brov=='brov' and rot=='rot':
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz
+            c.create_line((80, 100), (220, 100),width="3")#brov
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot
+
+        elif glaz=='glaz' and nos=='nos' and brov=='brov' and rot=='tühi':
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57')
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') 
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') 
+            c.create_oval((130,120,95,165),fill='#508dad')
+            c.create_oval((205,120,170,165),fill='#508dad')
+            c.create_line((80, 100), (220, 100),width="3")#galz/nos/brov
+
+        elif glaz=='glaz' and nos=='nos' and brov=='tühi' and rot=='tühi':
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz/nos
+
+        elif glaz=='glaz' and nos=='tühi' and brov=='tühi' and rot=='tühi':
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz
+
+        elif glaz=='tühi' and nos=='nos' and brov=='brov' and rot=='rot':
+            c.create_line((80, 100), (220, 100),width="3")#brov
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos/brov/rot
+
+        elif  glaz=='tühi' and nos=='tühi' and brov=='brov' and rot=='rot':
+            c.create_line((80, 100), (220, 100),width="3")#brov
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot/brov
+
+        elif glaz=='tühi' and nos=='tühi' and brov=='tühi' and rot=='rot':
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot
+
+        elif glaz=='tühi' and nos=='nos' and brov=='tühi' and rot=='tühi':
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos
+
+        elif glaz=='tühi' and nos=='nos' and brov=='brov' and rot=='tühi':
+            c.create_line((80, 100), (220, 100),width="3")#brov
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #brov/nos
+
+        elif glaz=='tühi' and nos=='tühi' and brov=='brov' and rot=='tühi':
+            c.create_line((80, 100), (220, 100),width="3")#brov
+
+        elif glaz=='glaz' and nos=='tühi' and brov=='brov' and rot=='tühi':
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz
+            c.create_line((80, 100), (220, 100),width="3")#brov/glaz
+
+        elif glaz=='glaz' and nos=='tühi' and brov=='brov' and rot=='rot':
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz
+            c.create_line((80, 100), (220, 100),width="3")#brov
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot/brov/glaz
+
+        elif glaz=='glaz' and nos=='tühi' and brov=='tühi' and rot=='rot':
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz/rot
+
+        elif glaz=='tühi' and nos=='nos' and brov=='tühi' and rot=='rot':
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos/rot
+
+        elif glaz=='glaz' and nos=='nos' and brov=='tühi' and rot=='rot':
+            c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57') #nos
+            c.create_oval((80, 120, 145, 165),fill='white',outline='black') #glaz
+            c.create_oval((155, 120, 220, 165),fill='white',outline='black') #glaz
+            c.create_oval((130,120,95,165),fill='#508dad') #glaz
+            c.create_oval((205,120,170,165),fill='#508dad')#glaz
+            c.create_arc((100, 235, 200, 235), style=CHORD, start=195, extent=150, fill="black")#rot/glaz/nos
+
+        elif glaz=='tühi' and nos=='tühi' and brov=='tühi' and rot=='tühi':
+            c.create_oval((10, 10, 290, 290),fill='#ccb35a')
+
+    elif oval=='tühi':
+        c.create_oval((10, 10, 290, 290),outline='white',fill='white') 
 def nosik():
     if var_nos.get()=='nos':
-        c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#c2aa57',outline='#c2aa57')
+        c.create_polygon([(145, 225), (175,225), (150, 150)],fill='#ad9950',outline='#c2aa57')
     elif var_nos.get()=='tühi':
-        c.create_polygon([(145, 225), (175,225), (160, 155)],fill="#ccb35a", outline='#ccb35a')
+        c.create_polygon([(145, 225), (175,225), (150, 150)],fill="#ccb35a", outline='#ccb35a')
 def glazik():
     if var_glaz.get()=='glaz':
-        c.create_oval((80, 120, 145, 165)) 
-        c.create_oval((155, 120, 220, 165)) 
+        c.create_oval((80, 120, 145, 165),fill='white',outline='black') 
+        c.create_oval((155, 120, 220, 165),fill='white',outline='black') 
+        c.create_oval((130,120,95,165),fill='#508dad')
+        c.create_oval((205,120,170,165),fill='#508dad')
     elif var_glaz.get()=='tühi':
-        c.create_oval((10, 10, 290, 290),outline='#ccb35a')
+        c.create_oval((80, 120, 145, 165),fill='#ccb35a',outline='#ccb35a') 
+        c.create_oval((155, 120, 220, 165),fill='#ccb35a',outline='#ccb35a') 
 def brovik():
     if var_brov.get()=='brov':
-        pass
+        c.create_line((80, 100), (220, 100),width="3")
     elif var_brov.get()=='tühi':
-        pass
+        c.create_line((80, 100), (220, 100),width="3",fill='#ccb35a')
 aken=Tk()
 aken.geometry('500x500')
 aken.title('Фоторобот')
@@ -53,9 +150,9 @@ rot=Checkbutton(f1,text='Рот',variable=var_rot,onvalue='rot',offvalue='tühi'
 rot.pack(side=TOP)
 
 var_brov=StringVar()
-brovi=Checkbutton(f1,text='Брови',variable=var_brov,onvalue='brov',offvalue='tühi',command=brovik)
+brovi=Checkbutton(f1,text='Бровь',variable=var_brov,onvalue='brov',offvalue='tühi',command=brovik)
 brovi.pack(side=TOP)
 
-
+#c.create_oval((10, 10, 290, 290),fill='#ccb35a') 
 c.pack()
 aken.mainloop() 
